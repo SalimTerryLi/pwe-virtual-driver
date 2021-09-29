@@ -1,0 +1,23 @@
+menu "Example Configuration"
+    config EXAMPLE_DSHOT_TX_GPIO
+        int "Dshot TX GPIO"
+        default 18
+        help
+            Set the GPIO number used for transmitting Dshot signal.
+
+    choice EXAMPLE_DSHOT_MODE
+        prompt "Dshot mode"
+        default EXAMPLE_DSHOT_MODE_300
+        help
+            This option sets Dshot mode
+
+        config EXAMPLE_DSHOT_MODE_150
+            bool "Dshot 150"
+        config EXAMPLE_DSHOT_MODE_300
+            bool "Dshot 300"
+        config EXAMPLE_DSHOT_MODE_600
+            bool "Dshot 600"
+        config EXAMPLE_DSHOT_MODE_1200
+            bool "Dshot 1200"
+    endchoice
+endmenu
